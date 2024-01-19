@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	modelo "Aprendiendo_Go_Golang/modelos"
 	"strconv"
 )
 
@@ -69,7 +70,7 @@ func main() {
 	multi := 2 * 3
 	fmt.Println("la multi es: ",multi)
 	// * Division
-	division := 2 / 3
+	division := 9 / 3
 	fmt.Println("la division es: ",division)
 	// * Modulo
 	modulo := 10 % 2
@@ -266,6 +267,28 @@ func main() {
 	v, ok := mapa["carol"]
 	fmt.Println(v,ok)
 
+	// ? clases en Go son structs
+
+	type car struct{
+		marca string
+		anio int
+		color string
+		nuevo bool
+	}
+
+	myCar := car{marca: "audi",anio: 2004,color: "negro",nuevo: false}
+
+	fmt.Println(myCar.anio)
+	// * otra forma de declarar un type vacio y luego agragar los datos en caso de no agragar alguno este sera el valor por defecto del tipo asignado
 	
+	var otroCar car
+	otroCar.anio = 2023
+
+	var carro modelo.CarPublic
+
+	carro.Anio = 2025
+	fmt.Println(carro)
+
+	modelo.Texto()
 
 }
