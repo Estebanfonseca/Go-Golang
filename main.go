@@ -155,6 +155,26 @@ func main() {
 		fmt.Println("es impar")
 	}
 
+	// ? condicion swicht
+
+	switch modulo := 7 % 2 ; modulo{
+	case 0:
+		fmt.Println("es par")
+	default:
+		fmt.Println("es impar")
+	}
+
+	valor2 := -400
+	switch{
+	case valor2 > 100:
+		fmt.Println("es mayor a 100")
+	case valor2 < 0:
+		fmt.Println("es menor a cero")
+	default:
+		fmt.Println("no entro a ninguna condicion")
+	}
+
+
 
 
 }
