@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"strconv"
+)
 
 // ? se usa coma y luego el tipo para saber que esos argumentos son de ese tipo
 func dobleNumero(a,b int){
@@ -118,7 +122,39 @@ func main() {
 	// 	fmt.Println(forever)
 	// 	forever++
 	// }
-
+	//? condicionales
+	x := 5
+	y := 10
 	
+	if x == 5 && y != 6 {
+		fmt.Println("condicional con and && ")
+	}
+
+	if x == 3 || y == 10 {
+		fmt.Println("condicional con or ||")
+	}
+
+	//? conversion de texto a numero
+	valor, err := strconv.Atoi("53")
+
+	//? nil se usa para saber si una funcion no tiene error
+	// * el log lanzara en consola el error 
+
+	if err != nil{
+		log.Fatal(err)
+	}
+
+	fmt.Println(valor)
+	// ? ejercicio para saber si un numero dado es par o impar
+
+	result := 5
+
+	if result % 2 == 0 {
+		fmt.Println("es par")
+	}else{
+		fmt.Println("es impar")
+	}
+
+
 
 }
