@@ -174,6 +174,23 @@ func main() {
 		fmt.Println("no entro a ninguna condicion")
 	}
 
+	// ? keyword defer se usa para ejecutar algo antes de que muera una funcion es bueno usarlo para cerrar conexion con DB o para cerrar archivos
+
+	defer fmt.Println("ejecuto antes de que muera ")
+
+	// ? otras keyword son el continue y break para los ciclos como en otros lenguajes 
+	for i := 0 ; i < 10 ; i++ {
+		if i == 3{
+			fmt.Println("es 3")
+			continue
+		}
+		if i == 9{
+			break
+		}
+		fmt.Println(i)
+	}
+
+
 
 
 
