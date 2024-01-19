@@ -1,9 +1,9 @@
 package main
 
 import (
+	modelo "Aprendiendo_Go_Golang/modelos"
 	"fmt"
 	"log"
-	modelo "Aprendiendo_Go_Golang/modelos"
 	"strconv"
 )
 
@@ -29,6 +29,9 @@ func isPalindromo(text string){
 		fmt.Println("no es palindromo")
 	}
 }
+
+
+
 func main() {
 	fmt.Println("hola mundo")
 
@@ -291,4 +294,38 @@ func main() {
 
 	modelo.Texto()
 
+	// ? punteros nos muestra el espacio en memoria que tiene una variable & para saber la direccion de memoria y * para traducir ese valor
+	xy := 50
+	yy := &xy
+
+	fmt.Println(yy)
+	fmt.Println(*yy)
+
+	
+	myPC := modelo.Pc{Marca: "msi",Ram: 8,Disco: 500}
+
+	fmt.Println(myPC)
+
+	myPC.DuplicarRam()
+
+	fmt.Println(myPC)
+
+
+	// ? interfaces en modelos.go
+
+	cuadrado := modelo.Cuadrado{Base: 15}
+	rectangulo := modelo.Rectangulo{Base: 23,Altura: 52}
+
+	modelo.Calcular(cuadrado)
+	modelo.Calcular(rectangulo)
+
+	// ? lista de interfaces para agregar distintos tipos de datos cosa que no se puede con un array o slice 
+
+	listInterface := []interface {}{"hola", 223,true,2.14}
+
+	fmt.Println(listInterface...)
+
+
 }
+
+
