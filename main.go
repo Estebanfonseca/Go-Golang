@@ -190,8 +190,45 @@ func main() {
 		fmt.Println(i)
 	}
 
+	// ? arrays con go son inmutables en tamaño pero se pueden modificar sus elementos
 
+	var array [4]int
+	array[0] = 2
+	array[1] = 200
+	fmt.Println(array,len(array),cap(array))
 
+	//? slice es un tipo de array pero a diferencia en este no se especifica su longitud
 
+	slice := []int {1,2,3,4,5,6}
+	fmt.Println(slice,len(slice),cap(slice))
+
+	// * metodos de slice al igual que en python se usa los slicing para cortar diferentes partes
+	fmt.Println(slice[0])
+	fmt.Println(slice[:5])
+	fmt.Println(slice[2:4])
+	fmt.Println(slice[:3])
+	// * append se debe especificar a que slice se va agegar el dato requerido
+	slice = append(slice,10)
+	fmt.Println(slice)
+	// * en esta parte podemos agregar un slice a otro slice automaticamente pone los 3 puntos lo que hace es un destructuring
+	newSlice := []int {22,23,24,25}
+	slice = append(slice, newSlice...)
+
+	fmt.Println(slice)
+
+	// * recorrido de slice en caso de no querer el iterador i se hace igual que en las funciones de retorno de varios valores con guion al piso
+	for i , valor := range slice{
+		fmt.Println(i,valor)
+	}
+
+	for _ , valor := range slice{
+		fmt.Println(valor)
+	}
+
+	// * en caso de solo querer el iterador solo se pone el valor de iterador sin necesidad de escapar el valor
+
+	for i := range slice {
+		fmt.Println(i)
+	}
 
 }
