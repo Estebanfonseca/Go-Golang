@@ -16,7 +16,18 @@ func dobleNumero(a,b int){
 func doble(a int) (b,c int) {
 	return a , a *4
 }
-
+// ? esta funcion verifica si una string se lee igual al derecho y al reves 
+func isPalindromo(text string){
+	var textReverse string
+	for i := len(text) -1 ; i >= 0 ; i--{
+		textReverse += string(text[i])
+	}
+	if text == textReverse {
+		fmt.Println("es palindromo")
+	}else{
+		fmt.Println("no es palindromo")
+	}
+}
 func main() {
 	fmt.Println("hola mundo")
 
@@ -230,5 +241,31 @@ func main() {
 	for i := range slice {
 		fmt.Println(i)
 	}
+
+	// ? ejercicio de recorrido con strings
+
+	isPalindromo("hola")
+
+	// ? maps en go son dicciooarios o objetos  
+	// * make se usar para crear distintos tipos de datos en este caso un map entre corchetes se especifica el tipo de datos de la key y fuera de estos el tipo de valor de esa key
+	mapa := make(map[string]int)
+
+	mapa["juan"] = 24
+	mapa["andres"] = 34
+	mapa["esteban"] = 16
+	// * al imprimir un map este no se mostrara de forma lineal sino de forma casi aleatoria 
+	fmt.Println(mapa)
+
+	// * recorrer un map i es la key y v el valor de esa key 
+
+	for i,v := range mapa{
+		fmt.Println(i,v)
+	}
+	// * mostrar el valor de una key si esta no existe mostrara el valor por defecto del tipo de dato de el valor de una key
+	// * para ver si una llave existe o no y su valor se puede hacer esto: si la key existe ok sera true sino sera false 
+	v, ok := mapa["carol"]
+	fmt.Println(v,ok)
+
+	
 
 }
