@@ -4,7 +4,10 @@ import (
 	modelo "Aprendiendo_Go_Golang/modelos"
 	"fmt"
 	"log"
+	"net/http"
 	"strconv"
+
+	"github.com/labstack/echo/v4"
 )
 
 // ? se usa coma y luego el tipo para saber que esos argumentos son de ese tipo
@@ -324,6 +327,14 @@ func main() {
 	listInterface := []interface {}{"hola", 223,true,2.14}
 
 	fmt.Println(listInterface...)
+
+	e := echo.New()
+
+	e.GET("/",func(c echo.Context) error {
+		return c.String(http.StatusOK,"hello world")
+	})
+	e.Logger.Fatal(e.Start(":1323"))
+	
 
 
 }
